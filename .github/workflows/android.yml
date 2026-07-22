@@ -24,17 +24,18 @@ jobs:
       - name: Build and verify
         run: ./gradlew lintDebug testDebugUnitTest assembleDebug --no-daemon
       - name: Name APK
-        run: cp app/build/outputs/apk/debug/app-debug.apk LinguaTycoon-${GITHUB_REF_NAME}.apk
+        run: cp app/build/outputs/apk/debug/app-debug.apk LinguaTycoon.apk
       - name: Upload workflow artifact
         uses: actions/upload-artifact@v6
         with:
           name: LinguaTycoon-APK
-          path: LinguaTycoon-${{ github.ref_name }}.apk
+          path: LinguaTycoon.apk
       - name: Publish tagged release
         if: startsWith(github.ref, 'refs/tags/v')
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          cp LinguaTycoon.apk "LinguaTycoon-${GITHUB_REF_NAME}.apk"
           if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
             gh release upload "$GITHUB_REF_NAME" "LinguaTycoon-${GITHUB_REF_NAME}.apk" --clobber
           else

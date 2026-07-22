@@ -11,8 +11,8 @@ android {
         applicationId = "com.linguatycoon.app"
         minSdk = 26
         targetSdk = 35
-        versionCode = 1
-        versionName = "1.0.0"
+        versionCode = 2
+        versionName = "1.1.0"
         buildConfigField("String", "DEFAULT_API_URL", "\"http://10.0.2.2:8000\"")
         buildConfigField("String", "GITHUB_REPOSITORY", "\"player1error/lingua-tycoon\"")
     }

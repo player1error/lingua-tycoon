@@ -5,3 +5,4 @@ local.properties
 *.iml
 server/.venv/
 __pycache__/
+.codex-remote-attachments/

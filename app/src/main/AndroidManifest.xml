@@ -4,12 +4,13 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <application
         android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme"
         android:label="Lingua Tycoon">
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

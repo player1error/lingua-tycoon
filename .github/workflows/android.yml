@@ -19,6 +19,8 @@ jobs:
           distribution: temurin
           java-version: "17"
           cache: gradle
+      - name: Make Gradle wrapper executable
+        run: chmod +x gradlew
       - name: Build and verify
         run: ./gradlew lintDebug testDebugUnitTest assembleDebug --no-daemon
       - name: Name APK
